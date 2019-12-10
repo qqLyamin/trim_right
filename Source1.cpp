@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void TrimRight(char* s) {
-	char* tmp = s;
+	char * tmp = s;
 	while (*tmp != '\0')
 	{
 		++tmp;
@@ -18,13 +18,14 @@ void TrimRight(char* s) {
 
 int main() {
 
-	const char* tmp = "sdfsfin243fn98394fh24-gh724-g=-h32-dnc81cb          ";
-	char* arr = new char[sizeof(tmp) + 1];
-	strcpy(arr, tmp);
+	const char* tmp = "123sdgfdsfgsdfgsdfgdsfgdsfgsdfgsdfgdsfgdsfgdsfgsdfgsdfgsdfgdsfgdsfgdsrfgsdfgsdfxg                        ";
+	char* arr = new char[strlen(tmp) + 1];
+	strcpy_s(arr, strlen(tmp) + 1, tmp);
 
 	std::cout << arr << '.' << std::endl;
 	TrimRight(arr);
 	std::cout << arr << '.' << std::endl;
 
+	delete[] arr;
 	return 0;
 }
